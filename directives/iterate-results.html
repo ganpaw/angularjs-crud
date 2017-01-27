@@ -1,0 +1,6 @@
+<td>{{deal._id}}</td>
+<td>{{deal.title}}</td>
+<td>{{deal.salePrice | currency }}</td>
+<td>{{deal.originalPrice | currency }}</td>
+<td><button class="btn btn-danger" ng-click="remove(deal._id)">Remove</button></td>
+<td><button class="btn btn-warning" ng-click="edit(deal._id)" ng-model="updateEnable">Edit</button></td>

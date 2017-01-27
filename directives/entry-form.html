@@ -1,0 +1,10 @@
+<td>&nbsp;</td>
+<td><input class="form-control" ng-model="dealObj.title"></td>
+<td><input class="form-control" ng-model="dealObj.salePrice"></td>
+<td><input class="form-control" ng-model="dealObj.originalPrice"></td>
+<td><button class="btn btn-primary" ng-click="addFunc()" ng-disabled="!(dealObj.title.length > 4) || !dealObj.salePrice.length">Add Deal</button></td>
+<td>
+  <button class="btn btn-success" ng-click="updateFunc()" ng-disabled="!enableUpdateFlag">Update</button>&nbsp;&nbsp;
+  <button class="btn btn-info" ng-click="clearFunc()">Clear</button>&nbsp;&nbsp;
+  <button class="btn btn-info" ng-click="refreshFunc()">Refresh</button>
+</td>

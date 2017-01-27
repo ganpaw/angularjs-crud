@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="crudControllerModule">
+<html ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,17 +30,17 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1>CRUD Operation (Controller)</h1>
+      <h1>CRUD Operation (using Controller & Directives)</h1>
     </div>
   </div>
   <div class="container">
   <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">Controller</a></li>
-    <li role="presentation"><a href="index-use-custom-directive.html">Controller & Directives</a></li>
+    <li role="presentation"><a href="index.html">Controller</a></li>
+    <li role="presentation" class="active"><a href="index-use-custom-directive.html">Controller & Directives</a></li>
   </ul>
 </div>
     <div class="container" ng-controller="CrudController">
-      <div class = "panel panel-success">
+      <div class = "panel panel-info">
          <div class = "panel-heading">
             <h5 class = "panel-title">
               Deals List
@@ -51,36 +51,22 @@
              <thead>
                <tr>
                  <th>_Id</th>
-                 <th>* Deal (Must be minimum 5 characters)</th>
+                 <th>* Deal (Must be minimum 5 characters ({{deal.title.length}})</th>
                  <th>* Sale Price</th>
                  <th>Original Price</th>
                  <th>&nbsp;</th>
                </tr>
              </thead>
              <tbody>
-               <tr>
-                 <td>&nbsp;</td>
-                 <td><input class="form-control" ng-model="deal.title"></td>
-                 <td><input class="form-control" ng-model="deal.salePrice"></td>
-                 <td><input class="form-control" ng-model="deal.originalPrice"></td>
-                 <td><button class="btn btn-primary" ng-click="add()" ng-disabled="!(deal.title.length > 4) || !deal.salePrice.length">Add Deal</button></td>
-                 <td><button class="btn btn-success" ng-click="update()" ng-disabled="!enableUpdate">Update</button>&nbsp;&nbsp;
-                   <button class="btn btn-info" ng-click="clear()">Clear</button>&nbsp;&nbsp;
-                   <button class="btn btn-info" ng-click="refresh()">Refresh</button></td>
-               </tr>
-               <tr ng-repeat="deal in deals track by $index">
-                 <td>{{deal._id}}</td>
-                 <td>{{deal.title}}</td>
-                 <td>{{deal.salePrice | currency }}</td>
-                 <td>{{deal.originalPrice | currency }}</td>
-                 <td><button class="btn btn-danger" ng-click="remove(deal._id)">Remove</button></td>
-                 <td><button class="btn btn-warning" ng-click="edit(deal._id)" ng-model="updateEnable">Edit</button></td>
-               </tr>
+               <tr entry-form deal-obj="deal" add-func="add" update-func="update" clear-func="clear" refresh-func="refresh" enable-update-flag="enableUpdate"></tr>
+               <tr iterate-results ng-repeat="deal in deals track by $index"></tr>
              </tbody>
            </table>
           </div>
         </div>
       </div>
 </body>
+<script src="js/crud-directive.js" charset="utf-8"></script>
 <script src="js/crud-controller.js" charset="utf-8"></script>
+<script src="js/app.js" charset="utf-8"></script>
 </html>
