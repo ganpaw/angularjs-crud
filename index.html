@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AngularJS CRUD</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <style media="screen">
+    font-family: 'Josefin Sans', sans-serif;
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Josefin Sans';
+    }
+
+    p, div {
+        font-family: 'Josefin Sans';
+    }
+  </style>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.1/angular.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>CRUD Operation</h1>
+    </div>
+  </div>
+    <div class="container" ng-controller="CrudController">
+      <div class = "panel panel-success">
+         <div class = "panel-heading">
+            <h5 class = "panel-title">
+              Deals List
+            </h5>
+         </div>
+         <div class = "panel-body">
+           <table class="table">
+             <thead>
+               <tr>
+                 <th>_Id</th>
+                 <th>* Deal (Must be minimum 5 characters)</th>
+                 <th>* Sale Price</th>
+                 <th>Original Price</th>
+                 <th>&nbsp;</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>&nbsp;</td>
+                 <td><input class="form-control" ng-model="deal.title"></td>
+                 <td><input class="form-control" ng-model="deal.salePrice"></td>
+                 <td><input class="form-control" ng-model="deal.originalPrice"></td>
+                 <td><button class="btn btn-primary" ng-click="add()" ng-disabled="!(deal.title.length > 4) || !deal.salePrice.length">Add Deal</button></td>
+                 <td><button class="btn btn-success" ng-click="update()" ng-disabled="!enableUpdate">Update</button>&nbsp;&nbsp;
+                   <button class="btn btn-info" ng-click="clear()">Clear</button>&nbsp;&nbsp;
+                   <button class="btn btn-info" ng-click="refresh()">Refresh</button></td>
+               </tr>
+               <tr ng-repeat="deal in deals track by $index">
+                 <td>{{deal._id}}</td>
+                 <td>{{deal.title}}</td>
+                 <td>{{deal.salePrice | currency }}</td>
+                 <td>{{deal.originalPrice | currency }}</td>
+                 <td><button class="btn btn-danger" ng-click="remove(deal._id)">Remove</button></td>
+                 <td><button class="btn btn-warning" ng-click="edit(deal._id)" ng-model="updateEnable">Edit</button></td>
+               </tr>
+             </tbody>
+           </table>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="js/crud-controller.js" charset="utf-8"></script>
+</html>
