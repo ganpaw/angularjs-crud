@@ -8,6 +8,7 @@
 
 
   // =  is 2 way $scope -> <- directive binding
+  // & is for functions
   function EntryFormDirective() {
     console.log("EntryFormDirective is invoked.");
     return {
@@ -15,10 +16,10 @@
       templateUrl: 'directives/entry-form.html',
       scope: {
         dealObj: "=",
-        addFunc: "=",
-        updateFunc: "=",
-        clearFunc: "=",
-        refreshFunc: "=",
+        addFunc: "&",
+        updateFunc: "&",
+        clearFunc: "&",
+        refreshFunc: "&",
         enableUpdateFlag: '='
       }
     }
