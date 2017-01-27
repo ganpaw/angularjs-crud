@@ -5,15 +5,17 @@ AngularJS - CRUD Static Web Application
 
 
 #### Steps:
-==========
-1. Install http-server
+
+Install http-server
+
 ```
  npm install http-server -g
 ```
 
-2. Run http server
+Run http server
+
 ```
 http-server .
 ```
 
-3. Open http://localhost:8080
+Open http://localhost:8080
