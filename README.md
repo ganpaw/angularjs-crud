@@ -32,7 +32,7 @@ docker images
 ```
 Run docker container
 ```
-docker run -d -p 8080:80 --name angular-crud-static-webapp angular-routing:1.0
+docker run -d -p 8080:80 --name angular-crud-static-webapp angular-crud:1.0
 ```
 Verify site running
 ```
