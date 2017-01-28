@@ -19,3 +19,22 @@ http-server .
 ```
 
 Open http://localhost:8080
+
+
+#### Using Docker:
+Build docker image based on NGINX
+```
+docker build -t angular-crud:1.0 .
+```
+Verify image
+```
+docker images
+```
+Run docker container
+```
+docker run -d -p 8080:80 --name angular-crud-static-webapp angular-routing:1.0
+```
+Verify site running
+```
+curl http://localhost:8080
+```
