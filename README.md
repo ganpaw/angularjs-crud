@@ -8,35 +8,35 @@ AngularJS - CRUD Static Web Application
 
 #### Steps:
 
-Install http-server
+**1- Install http-server
 
 ```
  npm install http-server -g
 ```
 
-Run http server
+**2- Run http server
 
 ```
 http-server .
 ```
 
-Open http://localhost:8080
+**3- Open http://localhost:8080
 
 
 #### Using Docker:
-Build docker image based on NGINX
+**1- Build docker image based on NGINX
 ```
 docker build -t angular-crud:1.0 .
 ```
-Verify image
+**2- Verify image
 ```
 docker images
 ```
-Run docker container
+**3- Run docker container
 ```
 docker run -d -p 8080:80 --name angular-crud-static-webapp angular-crud:1.0
 ```
-Verify site running
+**4- Verify site running
 ```
 curl http://localhost:8080
 ```
