@@ -1,6 +1,8 @@
 AngularJS - CRUD Static Web Application
 ==========
 
+[Demo](https://ganpaw.github.io/angularjs-crud)
+
 ![Alt text](/images/crud.PNG?raw=true "CRUD Operation")
 
 
