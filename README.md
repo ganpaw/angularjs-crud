@@ -6,6 +6,7 @@ AngularJS - CRUD Static Web Application
 ![Alt text](/images/crud.PNG?raw=true "CRUD Operation")
 
 
+
 ## Steps:
 
 **1- Install http-server**
