@@ -44,7 +44,6 @@
     // Init
     function init() {
       $log.info('init');
-      $log.debug(json);
       $scope.deals = angular.copy(json);
     }
     init();
@@ -54,9 +53,7 @@
       // Build/Retrieve the id for this new deal (it will _id of last + 1)
       $scope.deal._id = $scope.deals.length > 0 ? $scope.deals[$scope.deals.length - 1]._id + 1 : 0;
       console.log('$scope.deal._id: ' + $scope.deal._id);
-      $log.debug($scope.deal);
       $scope.deals.push($scope.deal);
-      $log.debug($scope.deals);
       $log.info("Added");
       $scope.clear();
     }
@@ -91,7 +88,6 @@
      */
     $scope.remove = function(id) {
       $log.info("Remove :" + id);
-      $log.debug($scope.deals);
       if (id > -1) {
         for (var i = 0; i < $scope.deals.length; i++) {
           if ($scope.deals[i]._id == id) {
@@ -101,7 +97,6 @@
           }
         }
       }
-      $log.debug($scope.deals);
     }
 
     //Clear Form
